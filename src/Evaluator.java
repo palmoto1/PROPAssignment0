@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Evaluator {
 
-    //Test git
-
     /**
      * Evaluates the result of an expression in reversed polish notation
      */
