@@ -39,7 +39,6 @@ public class AssignmentNode implements INode {
     public Object evaluate(Object[] args) throws Exception {
 
         Evaluator evaluator = new Evaluator();
-        System.out.println(expr.evaluate(args));
 
         double exprValue = evaluator.evaluate((String) expr.evaluate(args));
         return new Variable(id.value().toString(), exprValue);

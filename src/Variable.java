@@ -1,7 +1,7 @@
 public class Variable {
 
     private final String id;
-    private double value;
+    private final double value;
 
     public Variable(String id, double value){
         if (id == null || id.trim().isEmpty())

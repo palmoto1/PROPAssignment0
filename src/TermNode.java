@@ -13,7 +13,7 @@ public class TermNode implements INode {
         if (tokenizer == null)
             throw new IOException("No open file");
 
-        factor = new FactorNode(tokenizer);
+       factor = new FactorNode(tokenizer);
 
         if (tokenizer.current().token() == Token.MULT_OP || tokenizer.current().token() == Token.DIV_OP) {
 
@@ -23,12 +23,13 @@ public class TermNode implements INode {
             term = new TermNode(tokenizer);
 
         }
+
+
     }
 
 
     @Override
     public Object evaluate(Object[] args) throws Exception {
-
 
         String result = factor.evaluate(args) + "";
 
@@ -50,23 +51,6 @@ public class TermNode implements INode {
         }
 
     }
-
-    public Lexeme getOp() {
-        return op;
-    }
-
-    public TermNode getTerm() {
-
-        return term;
-
-    }
-
-    public INode getFactor() {
-
-        return factor;
-
-    }
-
     private void buildWithTab(String string, StringBuilder builder, int tabs) {
         builder.append("\t".repeat(tabs)).append(string).append("\n");
 

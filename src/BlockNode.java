@@ -2,7 +2,6 @@ import java.io.IOException;
 
 public class BlockNode implements INode {
 
-    //TODO: try implement so multiple blocks are allowed just for fun
 
     private static final String NAME = "BlockNode";
 

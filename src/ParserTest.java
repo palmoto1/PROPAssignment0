@@ -65,6 +65,6 @@ public class ParserTest {
     public static void main(String[] args) throws Exception {
         ParserTest parserTest = new ParserTest();
 
-        System.out.println(parserTest.parse("program1.txt"));
+        System.out.println(parserTest.parse("program2.txt"));
     }
 }

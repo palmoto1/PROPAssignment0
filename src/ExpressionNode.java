@@ -10,7 +10,6 @@ public class ExpressionNode implements INode {
     private ExpressionNode expr = null;
 
 
-
     public ExpressionNode(Tokenizer tokenizer) throws ParserException, IOException, TokenizerException {
         if (tokenizer == null)
             throw new IOException("No open file");
@@ -19,19 +18,20 @@ public class ExpressionNode implements INode {
 
         if (tokenizer.current().token() == Token.ADD_OP || tokenizer.current().token() == Token.SUB_OP) {
 
+
             op = tokenizer.current();
             tokenizer.moveNext();
 
             expr = new ExpressionNode(tokenizer);
 
+
         }
+
     }
 
 
     @Override
     public Object evaluate(Object[] args) throws Exception {
-
-
         String result = term.evaluate(args) + "";
 
         if (op != null){
@@ -39,7 +39,7 @@ public class ExpressionNode implements INode {
         }
 
         return result;
-   }
+    }
 
     @Override
     public void buildString(StringBuilder builder, int tabs) {
@@ -51,21 +51,6 @@ public class ExpressionNode implements INode {
         }
 
     }
-
-    public Lexeme getOp() {
-        return op;
-    }
-
-    public TermNode getTerm() {
-
-        return term;
-    }
-
-    public ExpressionNode getExpr() {
-
-        return expr;
-    }
-
     private void buildWithTab(String string, StringBuilder builder, int tabs) {
         builder.append("\t".repeat(tabs)).append(string).append("\n");
 
