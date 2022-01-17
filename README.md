@@ -1,1 +1,2 @@
-Assingment 0 for PROP course
+
+University assignment. Simple interpretor for mathematical expressions
